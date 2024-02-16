@@ -8,8 +8,10 @@ function App() {
   
   return (
     <>
-      <h1>Your Collection</h1>
+      <h2>Grandpa's Collection</h2>
       <TradingCards cardCollection={grandpaCollection}/>
+      <h2>Uncle's Collection</h2>
+      <TradingCards cardCollection={uncleCollection}/>
     </>
   )
 }
