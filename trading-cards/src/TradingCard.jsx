@@ -21,14 +21,15 @@ function TradingCard({tradingCard, index, tradingCardCollection, setTradingCardC
     const arr2 = tradingCardCollection.slice(index + 1);
     setTradingCardCollection([...arr1, cardClone, ...arr2]);
     setCard(cardClone);
-    console.log(cardClone);
   }
   
   return (
       <>
         <img src={card.frontCardImageLink} alt={`picture of a ${card.player} card`} onClick={(event) => flipImage(event)}/>
-        <p>{card.certificationNumber}</p>
-        <input type='checkbox' checked={card.sold} onChange={(event) => toggleSold(event)} />
+        <p>{card.cardSet} #{card.cardNumber} {card.player}</p>
+        <p>{card.gradingCompany} {card.grade} #{card.certificationNumber}</p>
+        <label htmlFor=''>Sold</label>
+        <input type='checkbox' checked={card.sold} onChange={(event) => toggleSold(event)} id={`${card.certificationNumber}soldCheckbox`} />
       </>
   )
 }
