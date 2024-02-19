@@ -8,14 +8,14 @@ function TradingCards({cardCollection}) {
 
   return (
     <div className='div-cards'>
-      {tradingCardCollection.map((card) => {
+      {tradingCardCollection.map((card, index) => {
         let cardClass = 'unsold';
         if(card.sold) {
           cardClass = 'sold';
         }
         return (
           <div key={card.certificationNumber} className={`div-card ${cardClass}`}>
-            <TradingCard tradingCard={card}/>
+            <TradingCard tradingCard={card} index={index} tradingCardCollection={tradingCardCollection} setTradingCardCollection={setTradingCardCollection}/>
           </div>
         )
       })}
