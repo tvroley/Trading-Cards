@@ -25,7 +25,7 @@ function TradingCard({tradingCard, index, tradingCardCollection, setTradingCardC
 
   const toggleImageSize = (event) => {
     const el = event.target;
-    console.log(el.classList.toggle('img-small'));
+    el.classList.toggle('img-small');
   }
   
   return (
