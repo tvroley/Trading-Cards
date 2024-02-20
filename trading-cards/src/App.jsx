@@ -8,6 +8,7 @@ function App() {
   
   return (
     <div>
+      <h1>Your Collection</h1>
       <Nav/>
       <Routes>
         <Route path="/" element={<Home/>} />
