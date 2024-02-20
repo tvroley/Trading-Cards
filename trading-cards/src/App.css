@@ -23,6 +23,15 @@ img {
   margin: 10px;
 }
 
+.div-navigation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: lightgray;
+  padding: 0.5rem;
+}
+
 .sold{
   background-color:  lightblue;
   background-blend-mode: normal;
