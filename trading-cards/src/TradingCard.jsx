@@ -45,10 +45,6 @@ function TradingCard({tradingCard, index, tradingCardCollection, setTradingCardC
 }
 
 TradingCard.propTypes = {
-    tradingCard: PropTypes.object.isRequired
-}
-
-TradingCard.propTypes = {
   tradingCard: PropTypes.shape({
     year: PropTypes.number,
     brand: PropTypes.string,
