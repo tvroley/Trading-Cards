@@ -1,13 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Nav from './Nav';
 
 export default function CardCollections() {
     return (
       <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/grandpaCollection">Grandpa's Collection</Link></li>
-          <li><Link to="/uncleCollection">Uncle's Collection</Link></li>
-        </ul>
+        <Nav/>
+        <Outlet/>
       </div>
     );
 }

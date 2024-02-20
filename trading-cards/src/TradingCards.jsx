@@ -1,12 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import TradingCard from './TradingCard';
-import PropTypes from 'prop-types';
+import { useLocation } from "react-router-dom";
+import grandpaCollection from './GrandpaCollection.json';
+import uncleCollection from './UncleCollection.json';
 
-function TradingCards({cardCollection}) {
-  const [tradingCardCollection, setTradingCardCollection] = useState(cardCollection);
+function TradingCards() {
+  const [tradingCardCollection, setTradingCardCollection] = useState([]);
+  const collectionName = useLocation().pathname.split("/")[1];
 
+  useEffect(() => {
+    if(collectionName === 'grandpa') {
+      setTradingCardCollection(grandpaCollection);
+    } else if (collectionName === 'uncle') {
+      setTradingCardCollection(uncleCollection);
+    }
+  }, [collectionName]);
+  
   return (
+    <>
+    <h2>{collectionName.toUpperCase()}</h2>
     <div className='div-cards'>
       {tradingCardCollection.map((card, index) => {
         let cardClass = 'unsold';
@@ -20,11 +33,8 @@ function TradingCards({cardCollection}) {
         )
       })}
     </div>
+    </>
   )
-}
-
-TradingCards.propTypes = {
-    cardCollection: PropTypes.array.isRequired
 }
 
 export default TradingCards;
