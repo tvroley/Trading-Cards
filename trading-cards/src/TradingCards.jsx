@@ -4,6 +4,7 @@ import TradingCard from './TradingCard';
 import { useLocation } from "react-router-dom";
 import grandpaCollection from './GrandpaCollection.json';
 import uncleCollection from './UncleCollection.json';
+import PropTypes from 'prop-types';
 
 function TradingCards() {
   const [tradingCardCollection, setTradingCardCollection] = useState([]);
@@ -36,5 +37,24 @@ function TradingCards() {
     </>
   )
 }
+
+TradingCard.propTypes = {
+  tradingCardCollection: PropTypes.arrayOf(
+    PropTypes.shape({
+      year: PropTypes.number,
+      brand: PropTypes.string,
+      cardSet: PropTypes.string,
+      cardNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      player: PropTypes.string,
+      gradingCompany: PropTypes.string,
+      grade: PropTypes.string,
+      certificationNumber: PropTypes.string,
+      frontCardImageLink: PropTypes.string,
+      backCardImageLink: PropTypes.string,
+      sold: PropTypes.bool
+    })
+  ),
+  setTradingCardCollection: PropTypes.func.isRequired
+};
 
 export default TradingCards;
