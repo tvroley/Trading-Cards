@@ -23,6 +23,13 @@
   margin: 10px;
 }
 
+.div-cards-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .div-navigation {
   display: flex;
   flex-direction: row;
