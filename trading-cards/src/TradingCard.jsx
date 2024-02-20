@@ -48,4 +48,37 @@ TradingCard.propTypes = {
     tradingCard: PropTypes.object.isRequired
 }
 
+TradingCard.propTypes = {
+  tradingCard: PropTypes.shape({
+    year: PropTypes.number,
+    brand: PropTypes.string,
+    cardSet: PropTypes.string,
+    cardNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    player: PropTypes.string,
+    gradingCompany: PropTypes.string,
+    grade: PropTypes.string,
+    certificationNumber: PropTypes.string,
+    frontCardImageLink: PropTypes.string,
+    backCardImageLink: PropTypes.string,
+    sold: PropTypes.bool
+  }),
+  index: PropTypes.number.isRequired,
+  tradingCardCollection: PropTypes.arrayOf(
+    PropTypes.shape({
+      year: PropTypes.number,
+      brand: PropTypes.string,
+      cardSet: PropTypes.string,
+      cardNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      player: PropTypes.string,
+      gradingCompany: PropTypes.string,
+      grade: PropTypes.string,
+      certificationNumber: PropTypes.string,
+      frontCardImageLink: PropTypes.string,
+      backCardImageLink: PropTypes.string,
+      sold: PropTypes.bool
+    })
+  ),
+  setTradingCardCollection: PropTypes.func.isRequired
+};
+
 export default TradingCard;
