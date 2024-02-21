@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import grandpaCollection from './GrandpaCollection.json';
 import uncleCollection from './UncleCollection.json';
 import PropTypes from 'prop-types';
+import CardForm from './CardForm';
 
 function TradingCards() {
   const [tradingCardCollection, setTradingCardCollection] = useState([]);
@@ -21,6 +22,7 @@ function TradingCards() {
   return (
     <>
     <h2>{collectionName.toUpperCase()}</h2>
+    <CardForm tradingCardCollection={tradingCardCollection} setTradingCardCollection={setTradingCardCollection}/>
     <div className='div-cards'>
       {tradingCardCollection.map((card, index) => {
         let cardClass = 'unsold';
@@ -41,7 +43,7 @@ function TradingCards() {
 TradingCard.propTypes = {
   tradingCardCollection: PropTypes.arrayOf(
     PropTypes.shape({
-      year: PropTypes.number,
+      year: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
       brand: PropTypes.string,
       cardSet: PropTypes.string,
       cardNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
