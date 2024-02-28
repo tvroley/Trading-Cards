@@ -673,7 +673,7 @@
         "certificationNumber": "80179918",
         "frontCardImageLink": "https://d1htnxwo4o0jhw.cloudfront.net/cert/146793652/zhzs2xJv5kOnMrwXIVkQZg.jpg",
         "backCardImageLink": "https://d1htnxwo4o0jhw.cloudfront.net/cert/146793652/kRlC5Zpjtk2AkBCCLi27CQ.jpg",
-        "sold": false
+        "sold": true
     },
     {
         "year": 1961,
